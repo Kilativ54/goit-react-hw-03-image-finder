@@ -1,9 +1,20 @@
-import { ImageGalleryItem, ImageGalleryItemImage } from "./ImageGalleryItem.styled";
-  
-  export default function ProductCard({ id, images, title, price }) {
-    return (
-        <ImageGalleryItem >
-        <ImageGalleryItemImage src="" alt="" />
-      </ImageGalleryItem>
-    );
-  }
+import PropTypes from 'prop-types';
+import {
+  ImageGalleryItemSt,
+  ImageGalleryItemImageSt,
+} from './ImageGalleryItem.styled';
+
+export const ImageGalleryItem = ({ image, onclick }) => (
+  <ImageGalleryItemSt id={image.id} onClick={onclick}>
+    <ImageGalleryItemImageSt
+      src={image.webformatURL}
+      alt={image.tags}
+      name={image.largeImageURL}
+    />
+  </ImageGalleryItemSt>
+);
+
+ImageGalleryItem.propTypes = {
+  image: PropTypes.object.isRequired,
+  onclick: PropTypes.func.isRequired,
+};
