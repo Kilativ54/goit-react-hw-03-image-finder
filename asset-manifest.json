@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Kilativ54.github.io/goit-react-hw-03-image-finder%20/static/css/main.82d1a20b.css",
-    "main.js": "/Kilativ54.github.io/goit-react-hw-03-image-finder%20/static/js/main.5fc29640.js",
-    "index.html": "/Kilativ54.github.io/goit-react-hw-03-image-finder%20/index.html",
-    "main.82d1a20b.css.map": "/Kilativ54.github.io/goit-react-hw-03-image-finder%20/static/css/main.82d1a20b.css.map",
-    "main.5fc29640.js.map": "/Kilativ54.github.io/goit-react-hw-03-image-finder%20/static/js/main.5fc29640.js.map"
+    "main.css": "/Kilativ54.github.io/goit-react-hw-03-image-finder/static/css/main.82d1a20b.css",
+    "main.js": "/Kilativ54.github.io/goit-react-hw-03-image-finder/static/js/main.7f486f29.js",
+    "index.html": "/Kilativ54.github.io/goit-react-hw-03-image-finder/index.html",
+    "main.82d1a20b.css.map": "/Kilativ54.github.io/goit-react-hw-03-image-finder/static/css/main.82d1a20b.css.map",
+    "main.7f486f29.js.map": "/Kilativ54.github.io/goit-react-hw-03-image-finder/static/js/main.7f486f29.js.map"
   },
   "entrypoints": [
     "static/css/main.82d1a20b.css",
-    "static/js/main.5fc29640.js"
+    "static/js/main.7f486f29.js"
   ]
 }
