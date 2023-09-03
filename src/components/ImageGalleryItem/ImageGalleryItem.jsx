@@ -4,17 +4,26 @@ import {
   ImageGalleryItemImageSt,
 } from './ImageGalleryItem.styled';
 
-export const ImageGalleryItem = ({ image, onclick }) => (
-  <ImageGalleryItemSt id={image.id} onClick={onclick}>
-    <ImageGalleryItemImageSt
-      src={image.webformatURL}
-      alt={image.tags}
-      name={image.largeImageURL}
-    />
-  </ImageGalleryItemSt>
-);
+export  function ImageGalleryItem({ image, openModal }) {
+  const { id, webformatURL } = image;
+
+  return (
+    <ImageGalleryItemSt id={id} className="gallery-item">
+      <ImageGalleryItemImageSt
+        src={webformatURL}
+        alt=""
+        onClick={() => {
+          openModal(id);
+        }}
+      />
+    </ImageGalleryItemSt>
+  );
+}
 
 ImageGalleryItem.propTypes = {
-  image: PropTypes.object.isRequired,
-  onclick: PropTypes.func.isRequired,
+  image: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    webformatURL: PropTypes.string.isRequired,
+  }).isRequired,
+  openModal: PropTypes.func.isRequired,
 };
