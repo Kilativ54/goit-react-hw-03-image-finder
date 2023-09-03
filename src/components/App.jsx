@@ -2,15 +2,14 @@ import React from 'react';
 import { Component } from 'react';
 
 import { Container } from './App.styled';
-
 import { Searchbar } from './Searchbar/Searchbar';
 import { fetchImages } from 'helpers/pictures';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
-import  Modal  from './Modal/Modal';
+import Modal from './Modal/Modal';
 
-export  class App extends Component {
+export class App extends Component {
   state = {
     images: [],
     pageNr: 1,
@@ -18,7 +17,7 @@ export  class App extends Component {
     totalPages: 0,
     isLoading: false,
     modalOpen: false,
-    largeImageURL: '',
+    modalImg: '',
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -40,7 +39,7 @@ export  class App extends Component {
 
     setTimeout(() => {
       this.setState({
-        largeImageURL: largeImage.largeImageURL,
+        modalImg: largeImage.largeImageURL,
         isLoading: false,
       });
       this.toggleModal();
@@ -92,7 +91,7 @@ export  class App extends Component {
       pageNr,
       totalPages,
       modalOpen,
-      largeImageURL,
+      modalImg,
     } = this.state;
     return (
       <Container>
@@ -105,12 +104,13 @@ export  class App extends Component {
           </>
         )}
         {modalOpen && (
-          <Modal onClose={this.toggleModal}>
-            <img src={largeImageURL} alt={currentSearch} />
-          </Modal>
+          <Modal
+            onClose={this.toggleModal}
+            imageUrl={modalImg}
+            altText={currentSearch}
+          />
         )}
       </Container>
     );
   }
 }
-

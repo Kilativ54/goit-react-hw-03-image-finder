@@ -4,7 +4,7 @@ import {
   ImageGalleryItemImageSt,
 } from './ImageGalleryItem.styled';
 
-export  function ImageGalleryItem({ image, openModal }) {
+export function ImageGalleryItem({ image, openModal }) {
   const { id, webformatURL } = image;
 
   return (

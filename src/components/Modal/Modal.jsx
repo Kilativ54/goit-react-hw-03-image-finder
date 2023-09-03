@@ -1,12 +1,9 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
-import { createPortal } from 'react-dom';
 
 import { ModalBackdrop, ModalStyles } from './Modal.styled';
 
-const modalRoot = document.querySelector('#modal-root');
-
-export default  class Modal extends Component {
+export default class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
@@ -28,16 +25,17 @@ export default  class Modal extends Component {
   };
 
   render() {
-    return createPortal(
+    const { imageUrl, altText } = this.props;
+    return (
       <ModalBackdrop onClick={this.onClickBackdrop}>
-        <ModalStyles>{this.props.children}</ModalStyles>
-      </ModalBackdrop>,
-      modalRoot
+        <ModalStyles>
+          <img src={imageUrl} alt={altText} />
+        </ModalStyles>
+      </ModalBackdrop>
     );
   }
 }
 
 Modal.propTypes = {
-  children: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
 };

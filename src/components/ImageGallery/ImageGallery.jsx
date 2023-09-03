@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { ImageGalleryListSt } from './ImageGallery.styled';
 
-export  function ImageGallery({ images, openModal }) {
+export function ImageGallery({ images, openModal }) {
   return (
     <ImageGalleryListSt id="gallery">
       {images.map(image => (

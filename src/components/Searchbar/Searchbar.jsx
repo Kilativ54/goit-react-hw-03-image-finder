@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+
 import {
   Search,
   SearchForm,
@@ -8,13 +9,15 @@ import {
   SearchFormInput,
 } from './Searchbar.styled';
 
-export  class Searchbar extends Component {
+export class Searchbar extends Component {
   state = {
     currentSearch: '',
   };
 
   onChange = evt => {
-    this.setState({ currentSearch: evt.currentTarget.value.toLowerCase().trim() });
+    this.setState({
+      currentSearch: evt.currentTarget.value.toLowerCase().trim(),
+    });
   };
 
   onSubmit = evt => {
@@ -29,7 +32,7 @@ export  class Searchbar extends Component {
       <Search>
         <SearchForm onSubmit={this.onSubmit}>
           <SearchFormButton type="submit">
-          <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+            <SearchFormButtonLabel>Search</SearchFormButtonLabel>
           </SearchFormButton>
 
           <SearchFormInput
@@ -47,5 +50,3 @@ export  class Searchbar extends Component {
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
-
-
